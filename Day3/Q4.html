@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Blog Layout</title>
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+        }
+
+        header {
+            background-color: #007BFF;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            font-size: 28px;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+
+        .blog-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            padding: 30px;
+        }
+
+        .blog-card {
+            background-color: white;
+            padding: 20px;
+            border-radius: 12px;
+            border: 2px solid #ddd;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .blog-card h2 {
+            font-size: 22px;
+            color: #222;
+            margin-bottom: 10px;
+        }
+
+        .blog-card p {
+            font-size: 15px;
+            color: #555;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        .blog-card button {
+            background-color: #007BFF;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 8px;
+            font-size: 14px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .blog-card button:hover {
+            background-color: #0056b3;
+        }
+
+        /* Tablet View */
+        @media (max-width: 900px) {
+            .blog-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        /* Mobile View */
+        @media (max-width: 600px) {
+            .blog-container {
+                grid-template-columns: 1fr;
+            }
+
+            header {
+                font-size: 22px;
+            }
+        }
+    </style>
+
+</head>
+<body>
+
+    <header>
+        My Blog Homepage
+    </header>
+
+    <main class="blog-container">
+
+        <div class="blog-card">
+            <h2>Blog Post 1</h2>
+            <p>This is a short description about blog post 1. It gives quick information to the user.</p>
+            <button>Read More</button>
+        </div>
+
+        <div class="blog-card">
+            <h2>Blog Post 2</h2>
+            <p>This is a short description about blog post 2. It gives quick information to the user.</p>
+            <button>Read More</button>
+        </div>
+
+        <div class="blog-card">
+            <h2>Blog Post 3</h2>
+            <p>This is a short description about blog post 3. It gives quick information to the user.</p>
+            <button>Read More</button>
+        </div>
+
+        <div class="blog-card">
+            <h2>Blog Post 4</h2>
+            <p>This is a short description about blog post 4. It gives quick information to the user.</p>
+            <button>Read More</button>
+        </div>
+
+        <div class="blog-card">
+            <h2>Blog Post 5</h2>
+            <p>This is a short description about blog post 5. It gives quick information to the user.</p>
+            <button>Read More</button>
+        </div>
+
+        <div class="blog-card">
+            <h2>Blog Post 6</h2>
+            <p>This is a short description about blog post 6. It gives quick information to the user.</p>
+            <button>Read More</button>
+        </div>
+
+    </main>
+
+</body>
+</html>
