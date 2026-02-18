@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Dashboard</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+        }
+
+        .dashboard {
+            display: flex;
+            min-height: 100vh;
+        }
+        .sidebar {
+            width: 20%;
+            background-color: #222;
+            color: white;
+            padding: 20px;
+        }
+
+        .sidebar h2 {
+            text-align: center;
+            margin-bottom: 30px;
+            letter-spacing: 1px;
+        }
+
+        .sidebar ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .sidebar ul li {
+            padding: 12px;
+            margin: 10px 0;
+            background-color: #333;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .sidebar ul li:hover {
+            background-color: #007BFF;
+        }
+        .main-content {
+            width: 80%;
+            padding: 30px;
+        }
+
+        .main-content h1 {
+            margin-bottom: 20px;
+            color: #222;
+        }
+        .cards {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .card {
+            background-color: white;
+            flex: 1;
+            min-width: 200px;
+            padding: 20px;
+            border-radius: 12px;
+            border: 2px solid #ddd;
+            box-shadow: 0px 4px 10px rgba(0,0,0,0.1);
+        }
+
+        .card h3 {
+            margin: 0;
+            color: #007BFF;
+            margin-bottom: 10px;
+        }
+
+        .card p {
+            margin: 0;
+            color: #444;
+            font-size: 15px;
+            line-height: 1.6;
+        }
+        @media (max-width: 700px) {
+            .dashboard {
+                flex-direction: column;
+            }
+
+            .sidebar {
+                width: 100%;
+                text-align: center;
+            }
+
+            .sidebar ul {
+                display: flex;
+                justify-content: center;
+                gap: 10px;
+                flex-wrap: wrap;
+            }
+
+            .sidebar ul li {
+                margin: 5px;
+                padding: 10px 15px;
+            }
+
+            .main-content {
+                width: 100%;
+            }
+
+            .cards {
+                flex-direction: column;
+            }
+        }
+    </style>
+
+</head>
+<body>
+
+    <div class="dashboard">
+        <div class="sidebar">
+            <h2>Dashboard</h2>
+            <ul>
+                <li>Home</li>
+                <li>Users</li>
+                <li>Reports</li>
+                <li>Settings</li>
+                <li>Logout</li>
+            </ul>
+        </div>
+        <div class="main-content">
+            <h1>Welcome Admin</h1>
+
+            <div class="cards">
+                <div class="card">
+                    <h3>Total Users</h3>
+                    <p>1200 Active Users</p>
+                </div>
+
+                <div class="card">
+                    <h3>Revenue</h3>
+                    <p>₹ 50,000 This Month</p>
+                </div>
+
+                <div class="card">
+                    <h3>New Orders</h3>
+                    <p>350 Orders Received</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+</html>
