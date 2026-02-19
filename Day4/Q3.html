@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Simple Discount Calculator</title>
+</head>
+<body>
+
+    <h1>Simple Discount Calculator</h1>
+
+    <script>
+        let amount = 4500;   
+        let discount = 0;
+        let finalAmount = 0;
+
+        if (amount >= 5000) {
+            discount = amount * 0.20;
+        }
+        else if (amount >= 3000) {
+            discount = amount * 0.10;
+        }
+        else {
+            discount = 0;
+        }
+
+        finalAmount = amount - discount;
+
+        document.write("<h2>Purchase Amount: " + amount + "</h2>");
+        document.write("<h2>Discount Amount: " + discount + "</h2>");
+        document.write("<h2>Final Payable Amount: " + finalAmount + "</h2>");
+
+        console.log("Purchase Amount: " + amount);
+        console.log("Discount Amount: " + discount);
+        console.log("Final Payable Amount: " + finalAmount);
+    </script>
+
+</body>
+</html>
