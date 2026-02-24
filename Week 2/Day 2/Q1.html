@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Marks Analyzer</title>
+</head>
+<body>
+
+<h2>Student Marks Analyzer</h2>
+<div id="output"></div>
+
+<script type="module">
+
+// Store student marks
+const marks = [75, 82, 90, 60, 45];
+
+// Using map()
+const processedMarks = marks.map(mark => mark);
+
+// Using reduce() to calculate total
+const total = processedMarks.reduce((acc, curr) => acc + curr, 0);
+
+// Calculate average
+const average = total / processedMarks.length;
+
+// Pass/Fail based on average
+const result = average >= 50 ? "Pass" : "Fail";
+
+// Display using template literals
+document.getElementById("output").innerHTML = `
+    <p>Marks: ${processedMarks.join(", ")}</p>
+    <p>Total: ${total}</p>
+    <p>Average: ${average.toFixed(2)}</p>
+    <p>Result: ${result}</p>
+`;
+
+</script>
+
+</body>
+</html>
