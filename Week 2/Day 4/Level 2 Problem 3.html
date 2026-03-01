@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>College Event Dashboard</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="bg-light">
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+  <div class="container-fluid">
+    <a class="navbar-brand fw-bold" href="#">Event Dashboard</a>
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item"><a class="nav-link active" href="#">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">Events</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">Registrations</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<div class="container-fluid py-4">
+  <div class="row">
+    <div class="col-12 col-md-3 col-lg-2 bg-white p-3 shadow-sm mb-3 mb-md-0">
+      <h5 class="fw-bold">Menu</h5>
+      <ul class="nav flex-column">
+        <li class="nav-item"><a class="nav-link" href="#">Dashboard</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">Manage Events</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">Reports</a></li>
+      </ul>
+      <button class="btn btn-primary w-100 mt-3" data-bs-toggle="modal" data-bs-target="#addEventModal">
+        + Add Event
+      </button>
+    </div>
+    <div class="col-12 col-md-9 col-lg-10">
+      <h3 class="mb-4">Upcoming Events</h3>
+
+      <div class="row g-4">
+        <div class="col-sm-6 col-lg-4 col-xl-3">
+          <div class="card h-100 shadow-sm">
+            <div class="card-body">
+              <h5 class="card-title">Tech Fest 2026</h5>
+              <p class="card-text">Annual technology event.</p>
+              <p class="text-muted">Date: 15 March 2026</p>
+              <button class="btn btn-outline-primary btn-sm">View</button>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6 col-lg-4 col-xl-3">
+          <div class="card h-100 shadow-sm">
+            <div class="card-body">
+              <h5 class="card-title">Cultural Day</h5>
+              <p class="card-text">Music, Dance & Fun.</p>
+              <p class="text-muted">Date: 22 March 2026</p>
+              <button class="btn btn-outline-primary btn-sm">View</button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</div>
+<div class="modal fade" id="addEventModal" tabindex="-1">
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+      <div class="modal-header">
+        <h5 class="modal-title">Add New Event</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+
+      <div class="modal-body">
+        <form class="needs-validation" novalidate>
+
+          <div class="mb-3">
+            <label class="form-label">Event Name</label>
+            <input type="text" class="form-control" required>
+            <div class="invalid-feedback">Please enter event name.</div>
+          </div>
+
+          <div class="mb-3">
+            <label class="form-label">Date</label>
+            <input type="date" class="form-control" required>
+            <div class="invalid-feedback">Please select a date.</div>
+          </div>
+
+          <div class="mb-3">
+            <label class="form-label">Description</label>
+            <textarea class="form-control" rows="3" required></textarea>
+            <div class="invalid-feedback">Please enter description.</div>
+          </div>
+
+          <button type="submit" class="btn btn-primary w-100">Save Event</button>
+
+        </form>
+      </div>
+
+    </div>
+  </div>
+</div>
+<script>
+  (() => {
+    'use strict'
+    const forms = document.querySelectorAll('.needs-validation')
+
+    Array.from(forms).forEach(form => {
+      form.addEventListener('submit', event => {
+        if (!form.checkValidity()) {
+          event.preventDefault()
+          event.stopPropagation()
+        }
+        form.classList.add('was-validated')
+      }, false)
+    })
+  })();
+</script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
