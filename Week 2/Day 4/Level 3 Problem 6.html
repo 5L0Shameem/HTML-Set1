@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>OOP - Inheritance Example</title>
+</head>
+<body>
+
+  <h2>Vehicle Management System</h2>
+  <div id="output"></div>
+
+  <script>
+    class Vehicle {
+      constructor(brand, speed) {
+        this.brand = brand;
+        this.speed = speed;
+      }
+
+      displayInfo() {
+        return `
+          <p><strong>Brand:</strong> ${this.brand}</p>
+          <p><strong>Speed:</strong> ${this.speed} km/h</p>
+        `;
+      }
+    }
+
+    class Car extends Vehicle {
+      constructor(brand, speed, fuelType) {
+        super(brand, speed); 
+        this.fuelType = fuelType;
+      }
+
+      showCarDetails() {
+        return `
+          ${this.displayInfo()}
+          <p><strong>Fuel Type:</strong> ${this.fuelType}</p>
+        `;
+      }
+    }
+
+    const myCar = new Car("Toyota", 180, "Petrol");
+
+    document.getElementById("output").innerHTML = `
+      <h3>Car Details</h3>
+      ${myCar.displayInfo()}   <!-- Parent Method -->
+      <hr>
+      ${myCar.showCarDetails()} <!-- Child Method -->
+    `;
+  </script>
+
+</body>
+</html>
