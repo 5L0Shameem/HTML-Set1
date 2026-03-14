@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ElectroMart - Landing Page</title>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    :root {
+      --bs-primary: #6f42c1;
+      --bs-secondary: #6610f2;
+    }
+
+    .hero {
+      background: linear-gradient(to right, #6f42c1, #6610f2);
+      color: white;
+      min-height: 60vh;
+    }
+  </style>
+</head>
+<body>
+<nav class="navbar navbar-dark bg-primary fixed-top">
+  <div class="container-fluid">
+    <a class="navbar-brand fw-bold" href="#">ElectroMart</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasMenu">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="offcanvas offcanvas-end text-bg-primary" id="offcanvasMenu">
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title">Menu</h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"></button>
+      </div>
+      <div class="offcanvas-body">
+        <ul class="navbar-nav">
+          <li class="nav-item"><a class="nav-link text-white" href="#">Home</a></li>
+          <li class="nav-item"><a class="nav-link text-white" href="#products">Products</a></li>
+          <li class="nav-item"><a class="nav-link text-white" href="#newsletter">Newsletter</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</nav>
+<div class="mt-5 pt-4"></div>
+<section class="hero d-flex align-items-center text-center">
+  <div class="container">
+    <h1 class="fw-bold">Welcome to ElectroMart</h1>
+    <p class="lead">Best Electronics Deals at Unbeatable Prices</p>
+    <button class="btn btn-light btn-lg mt-3">Shop Now</button>
+  </div>
+</section>
+<section class="py-5 bg-light">
+  <div class="container">
+    <div id="productCarousel" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-inner rounded shadow">
+        <div class="carousel-item active">
+          <img src="https://via.placeholder.com/1200x400" class="d-block w-100" alt="Slide 1">
+        </div>
+        <div class="carousel-item">
+          <img src="https://via.placeholder.com/1200x400" class="d-block w-100" alt="Slide 2">
+        </div>
+        <div class="carousel-item">
+          <img src="https://via.placeholder.com/1200x400" class="d-block w-100" alt="Slide 3">
+        </div>
+      </div>
+
+      <button class="carousel-control-prev" type="button" data-bs-target="#productCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon"></span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#productCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon"></span>
+      </button>
+    </div>
+  </div>
+</section>
+<section id="products" class="py-5">
+  <div class="container">
+    <h2 class="text-center mb-4">Featured Products</h2>
+    <div class="row g-4">
+      
+      <div class="col-12 col-md-6 col-lg-4">
+        <div class="card h-100 shadow-sm">
+          <img src="https://via.placeholder.com/300x200" class="card-img-top" alt="Smartphone">
+          <div class="card-body text-center">
+            <h5 class="card-title">Smartphone</h5>
+            <p class="text-muted">Latest model with advanced features.</p>
+            <button class="btn btn-primary">Buy Now</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-12 col-md-6 col-lg-4">
+        <div class="card h-100 shadow-sm">
+          <img src="https://via.placeholder.com/300x200" class="card-img-top" alt="Laptop">
+          <div class="card-body text-center">
+            <h5 class="card-title">Laptop</h5>
+            <p class="text-muted">High performance and sleek design.</p>
+            <button class="btn btn-primary">Buy Now</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-12 col-md-6 col-lg-4 d-none d-lg-block">
+        <div class="card h-100 shadow-sm">
+          <img src="https://via.placeholder.com/300x200" class="card-img-top" alt="Headphones">
+          <div class="card-body text-center">
+            <h5 class="card-title">Headphones</h5>
+            <p class="text-muted">Premium sound quality.</p>
+            <button class="btn btn-primary">Buy Now</button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+<section id="newsletter" class="bg-primary text-white py-5">
+  <div class="container text-center">
+    <h3>Subscribe to Our Newsletter</h3>
+    <p>Get updates about new offers and products.</p>
+
+    <form class="row justify-content-center mt-3">
+      <div class="col-12 col-md-6 col-lg-4">
+        <input type="email" class="form-control mb-2" placeholder="Enter your email" required>
+      </div>
+      <div class="col-12 col-md-auto">
+        <button class="btn btn-light w-100">Subscribe</button>
+      </div>
+    </form>
+  </div>
+</section>
+<footer class="bg-dark text-white text-center py-3">
+  <p class="mb-0">&copy; 2026 ElectroMart. All Rights Reserved.</p>
+</footer>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
