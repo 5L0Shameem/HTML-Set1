@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product List with Cart</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 30px;
+        }
+        .cart {
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+        .product-list {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        .product {
+            border: 1px solid #ccc;
+            padding: 15px;
+            width: 200px;
+            border-radius: 5px;
+            text-align: center;
+            position: relative;
+        }
+        .added-msg {
+            display: none;
+            color: green;
+            font-size: 14px;
+            margin-top: 5px;
+        }
+        button:disabled {
+            background-color: #ccc;
+            cursor: not-allowed;
+        }
+    </style>
+</head>
+<body>
+    <div class="cart">Cart Items: <span id="cartCount">0</span></div>
+    <div class="product-list">
+        <div class="product">
+            <h3>Product 1</h3>
+            <p>$10</p>
+            <button class="add-cart">Add to Cart</button>
+            <div class="added-msg">Added!</div>
+        </div>
+        <div class="product">
+            <h3>Product 2</h3>
+            <p>$20</p>
+            <button class="add-cart">Add to Cart</button>
+            <div class="added-msg">Added!</div>
+        </div>
+        <div class="product">
+            <h3>Product 3</h3>
+            <p>$30</p>
+            <button class="add-cart">Add to Cart</button>
+            <div class="added-msg">Added!</div>
+        </div>
+        <div class="product">
+            <h3>Product 4</h3>
+            <p>$40</p>
+            <button class="add-cart">Add to Cart</button>
+            <div class="added-msg">Added!</div>
+        </div>
+    </div>
+
+    <script>
+        $(document).ready(function(){
+            var cartCount = 0;
+
+            $('.product-list').on('click', '.add-cart', function(){
+                cartCount++;
+                $('#cartCount').text(cartCount);
+                $(this).prop('disabled', true);
+                $(this).siblings('.added-msg').fadeIn().delay(1000).fadeOut();
+            });
+        });
+    </script>
+</body>
+</html>
