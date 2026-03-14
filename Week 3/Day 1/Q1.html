@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Feedback Form</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 30px;
+        }
+        form {
+            max-width: 400px;
+        }
+        input, select, textarea, button {
+            width: 100%;
+            margin: 10px 0;
+            padding: 8px;
+        }
+        #message {
+            margin-top: 15px;
+            font-weight: bold;
+        }
+        .success {
+            color: green;
+        }
+        .error {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <h2>Student Feedback Form</h2>
+    <form id="feedbackForm">
+        <input type="text" id="name" placeholder="Your Name">
+        <input type="email" id="email" placeholder="Your Email">
+        <select id="rating">
+            <option value="">Select Course Rating</option>
+            <option value="Excellent">Excellent</option>
+            <option value="Good">Good</option>
+            <option value="Average">Average</option>
+            <option value="Poor">Poor</option>
+        </select>
+        <textarea id="comments" placeholder="Your Comments"></textarea>
+        <button type="submit">Submit Feedback</button>
+    </form>
+    <div id="message"></div>
+    <script>
+        $(document).ready(function(){
+            $('#feedbackForm').submit(function(e){
+                e.preventDefault();
+                var name = $('#name').val().trim();
+                var email = $('#email').val().trim();
+                if(name === "" || email === "") {
+                    $('#message').html("Please enter both Name and Email.").removeClass('success').addClass('error');
+                } else {
+                    $('#message').html("Thank you for your feedback, " + name + "!").removeClass('error').addClass('success');
+                    $('#feedbackForm')[0].reset();
+                }
+            });
+        });
+    </script>
+</body>
+</html>
