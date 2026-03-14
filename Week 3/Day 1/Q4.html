@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive To-Do List</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 30px;
+        }
+        input, button {
+            padding: 8px;
+            margin: 5px 0;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            padding: 8px;
+            margin: 5px 0;
+            background-color: #f1f1f1;
+            border-radius: 5px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        li.completed {
+            text-decoration: line-through;
+            color: #888;
+        }
+        .delete-btn {
+            background-color: red;
+            color: white;
+            border: none;
+            padding: 5px 8px;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+        .stats {
+            margin-top: 15px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h2>To-Do List</h2>
+    <input type="text" id="taskInput" placeholder="Enter a task">
+    <button id="addTask">Add Task</button>
+
+    <ul id="taskList"></ul>
+
+    <div class="stats">
+        Total Tasks: <span id="totalTasks">0</span> |
+        Completed Tasks: <span id="completedTasks">0</span>
+    </div>
+
+    <script>
+        $(document).ready(function(){
+            function updateStats(){
+                var total = $('#taskList li').length;
+                var completed = $('#taskList li.completed').length;
+                $('#totalTasks').text(total);
+                $('#completedTasks').text(completed);
+            }
+
+            $('#addTask').click(function(){
+                var taskText = $('#taskInput').val().trim();
+                if(taskText !== ""){
+                    $('#taskList').append(
+                        '<li><span class="task-text">'+ taskText +'</span> <button class="delete-btn">Delete</button></li>'
+                    );
+                    $('#taskInput').val('');
+                    updateStats();
+                }
+            });
+
+            $('#taskList').on('click', '.task-text', function(){
+                $(this).parent().toggleClass('completed');
+                updateStats();
+            });
+
+            $('#taskList').on('click', '.delete-btn', function(){
+                $(this).parent().remove();
+                updateStats();
+            });
+        });
+    </script>
+</body>
+</html>
