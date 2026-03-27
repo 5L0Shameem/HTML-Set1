@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Number Analysis Tool</title>
+</head>
+<body>
+
+    <h1>Number Analysis Tool</h1>
+
+    <script>
+        let num = 10;   
+        let result = (num >= 0) ? "Positive" : "Negative";
+
+        document.write("<h2>Number: " + num + "</h2>");
+        document.write("<h2>Positive/Negative: " + result + "</h2>")
+        if (num % 2 == 0) {
+            document.write("<h2>Even/Odd: Even</h2>");
+        }
+        else {
+            document.write("<h2>Even/Odd: Odd</h2>");
+        }
+        document.write("<h2>Numbers from 1 to " + num + ":</h2>");
+
+        for (let i = 1; i <= num; i++) {
+            document.write(i + "<br>");
+        }
+
+    </script>
+
+</body>
+</html>
