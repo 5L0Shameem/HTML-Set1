@@ -1,0 +1,27 @@
+﻿@model List<WebApplication3.Models.Product>
+
+<h2>Products</h2>
+
+<a href="/ProductCrud/Create">Add New</a>
+
+<table border="1">
+    <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Price</th>
+        <th>Actions</th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.Id</td>
+            <td>@item.Name</td>
+            <td>@item.Price</td>
+            <td>
+                <a href="/ProductCrud/Edit/@item.Id">Edit</a> |
+                <a href="/ProductCrud/Delete/@item.Id">Delete</a>
+            </td>
+        </tr>
+    }
+</table>
